@@ -3,12 +3,35 @@
 
 .main-content{
     min-width: 15rem;
-    background: var.$content-background;
-    @include mixin.main-appearance;
+    // @include mixin.main-appearance(var.$content-background);
+    border-right: solid 1px var.$light-grey;
 
     &__title{
-        margin: 1rem 2rem;
-        font-size: 2rem;
-        font-weight: 800;
+        @include mixin.big-title;
+    }
+
+    &__bigname {
+        font-size: 3rem;
+        position: absolute;
+        /* left: -2.7rem; */
+        top: -2.7rem;
+        /* writing-mode: vertical-lr; */
+        opacity: 0.1;
+    }
+
+    &__see-more {
+        padding: 2rem;
+        text-align: center;
+        &--button{
+            color: var.$main-blue;
+            font-size: 1.7rem;
+            font-weight: 700;
+            padding: 0.5rem;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 80%;
+            display: block;
+            margin: auto;
+        }
     }
 }

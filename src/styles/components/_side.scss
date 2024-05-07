@@ -4,7 +4,14 @@
 .side{
     padding: var.$default-padding;
     min-width: 15rem;
-    height: fit-content;
-    margin-left: 0.5em;
-    @include mixin.main-appearance;
+    margin: 0 0.5em;
+    // @include mixin.main-appearance(var.$content-background);
+    &__title {
+        font-size: 1.4rem;
+    }
+    &__current{
+        margin: 0.3rem;
+        color: var.$main-blue;
+        font-weight: 700;
+    }
 }

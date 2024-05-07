@@ -2,38 +2,61 @@
 @use "../mixin";
 
 .post{
-    max-width: 95%;
-    margin: auto;
-    border: solid 2px black;
-    border-radius: 6px;
+    max-width: 100%;
+    margin: 0.5em;
+    border: solid 1px black;
+    border-radius: 3px;
     overflow: hidden;
+    background: var.$content-background;
 
     &__profile{
         margin: var.$default-padding;
+        margin-bottom: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0.2em;
-        border: solid 1px black;
         max-width: 100%;
+        background: var.$content-background-2;
         &--name{
             width: 100%;
-            padding: var.$default-padding;
+            padding: 0.4em;
         }
     }
 
     &__buttons{
         display: flex;
         gap: 0.5em;
-        padding: 0 0.2em;
+        padding-right: var.$default-padding;
+    }
+
+    &__button{
+        padding: 0.2rem;
+        border: solid 1px transparent;
+        border-radius: 3px;
+        width: 2.2em;
+        height: 2.2em;
+        &:hover{
+            border: solid 1px var.$light-grey;
+            background-color: var.$content-background-2-hover;
+            box-shadow: 0 1px white;
+            
+        }
+        &:active{
+            border: solid 1px var.$light-grey;
+            padding: 0.3rem 0.2rem 0.1rem 0.2rem; 
+            background-color: var.$content-background-3;
+            box-shadow: 0 1px white, inset 0 1px rgba(0, 0, 0, 0.432);
+
+        }
     }
 
     &__content{
         padding: var.$default-padding;
+        line-height: 1.2em;
     }
 
     &__tags{
-        padding: 0.5rem;
+        padding: 0.5em;
         span{
             padding: 0.2em 0.6em;
             background-color: rgb(194 50 74);
@@ -41,6 +64,7 @@
             margin: 0 0.1em;
             color: white;
             font-weight: 700;
+            display: inline-block;
         }
     }
 
@@ -49,6 +73,12 @@
         justify-content: space-between;
         padding: var.$default-padding;
         background: var.$content-background-2;
+        .bold{
+            color: var.$main-blue;
+        }
+        &--stats>span{
+            margin-right: 1em;
+        }
     }
 
 }

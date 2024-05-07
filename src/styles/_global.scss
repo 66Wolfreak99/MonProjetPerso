@@ -1,4 +1,5 @@
 @use "var";
+@use "mixin";
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
@@ -17,11 +18,21 @@ body{
 
 }
 
+a{
+    font-weight: 500;
+    text-decoration: none;
+    color: var.$link-grey;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
 .container {
     max-width: var.$display-width;
     margin: auto;
     position: relative;
     display: flex;
+    @include mixin.main-appearance(var.$content-background)
 }
 
 .header{

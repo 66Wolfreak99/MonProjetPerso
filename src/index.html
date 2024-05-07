@@ -8,13 +8,13 @@
 </head>
 <body>
     <header class="header">
-        <h1>
+        <p>
             Blue Dragon
-        </h1>
+        </p>
         <nav class="navigation">
             <a href="">Explore</a>
-            <a href="">Messages</a>
-            <a href="">Notifications</a>
+            <a href=""> <span class="navigation__notification">2</span> Messages</a>
+            <a href=""> <span class="navigation__notification">10</span> Notifications</a>
             <section class="navigation__account">
                 <img src="img/pfp1.png" alt="Sifyro - Dragon pfp for YeenBeanz and CaptainScales" class="navigation__account--pic profile-pic">
                 <p class="navigation__account--name">
@@ -28,13 +28,9 @@
     </header>
 
     <div class="container">
-
-        <aside class="sidebar">
-            <p class="sidebar__content">Latest Winds</p>
-        </aside>
-
+        
         <main class="main-content">
-
+            <h1 class="main-content__bigname">Dashboard</h1>
             <form action="" class="new-post">
 
                 <label for="newpost">What does the wind bring?</label>
@@ -51,7 +47,7 @@
                     </section>
     
                     <section class="new-post__imagearea">
-    
+                        <img src="img/img.svg" alt="">
                     </section>
                 </div>
 
@@ -65,9 +61,9 @@
                     <p class="post__profile--name">Hurkin</p>
 
                     <section class="post__buttons">
-                        <button class="button">Comments</button>
-                        <button class="button">Share</button>
-                        <button class="button">Like</button>
+                        <div class="post__button"> <img src="img/comment.svg" alt=""> </div>
+                        <div class="post__button"> <img src="img/share.svg" alt=""> </div>
+                        <div class="post__button"> <img src="img/fire.svg" alt=""> </div>
                     </section>
                 </div>
                 <p class="post__content">
@@ -81,9 +77,9 @@
                 </aside>
                 <footer class="post__footer">
                     <p class="post__footer--stats">
-                        Views: <span class="bold">1586</span> 
-                        Responses: <span class="bold">5</span> 
-                        Likes: <span class="bold">500</span>
+                        <span>Views: <span class="bold">1586</span> </span>
+                        <span>Responses: <span class="bold">5</span> </span>
+                        <span>Likes: <span class="bold">500</span> </span>
                     </p>
                     <p class="post__footer--report"> 
                         <a href="">Report</a>
@@ -91,6 +87,12 @@
                 </footer>
                 
             </article>
+  
+            <section class="main-content__see-more">
+                <a href="" class="main-content__see-more--button">
+                    Sail the winds
+                </a>
+            </section>
         </main>
         <aside class="side">
             <section class="side__container">
@@ -102,6 +104,7 @@
                     <li class="side__current">#Paathurnax</li>
                     <li class="side__current">#Meow</li>
                 </ul>
+                <a href="" class="side__more">See more</a>
             </section>
             <!-- <section class="side__container">
                 <h3 class="side__title">Wind currents</h3>
