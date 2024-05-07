@@ -1,0 +1,12 @@
+@use "reset";
+@use "global";
+@use "var";
+@use "mixin";
+
+@use "components/sidebar";
+@use "components/navigation";
+@use "components/post";
+@use "components/side";
+@use "components/main-content";
+@use "components/button";
+@use "components/new-post";

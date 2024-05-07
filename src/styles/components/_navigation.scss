@@ -1,0 +1,21 @@
+.navigation{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__account {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.2rem;
+        min-width: 10em;
+        background: white;
+        &--name{
+            width: 100%;
+            padding: 0 0.5rem;
+        }
+    }
+}

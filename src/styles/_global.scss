@@ -1,0 +1,51 @@
+@use "var";
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    font-family: "Ubuntu", sans-serif;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    margin: 0;
+    background-color: var.$main-background;
+
+}
+
+.container {
+    max-width: var.$display-width;
+    margin: auto;
+    position: relative;
+    display: flex;
+}
+
+.header{
+    max-width: var.$display-width;
+    height: 10rem;
+    margin: auto;
+    position: relative;
+}
+
+.header, .footer{
+    padding: 0.8rem;
+}
+
+.profile-pic{
+    max-width: 3em;
+}
+
+.footer{
+    width: 100%;
+    background:  var.$content-background;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.bold{
+    font-weight: 700;
+}

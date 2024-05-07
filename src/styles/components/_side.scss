@@ -1,0 +1,10 @@
+@use "../var";
+@use "../mixin";
+
+.side{
+    padding: var.$default-padding;
+    min-width: 15rem;
+    height: fit-content;
+    margin-left: 0.5em;
+    @include mixin.main-appearance;
+}

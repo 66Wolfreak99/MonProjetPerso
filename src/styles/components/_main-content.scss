@@ -1,0 +1,14 @@
+@use "../var";
+@use "../mixin";
+
+.main-content{
+    min-width: 15rem;
+    background: var.$content-background;
+    @include mixin.main-appearance;
+
+    &__title{
+        margin: 1rem 2rem;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+}

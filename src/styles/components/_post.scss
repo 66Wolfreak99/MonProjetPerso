@@ -1,0 +1,54 @@
+@use "../var";
+@use "../mixin";
+
+.post{
+    max-width: 95%;
+    margin: auto;
+    border: solid 2px black;
+    border-radius: 6px;
+    overflow: hidden;
+
+    &__profile{
+        margin: var.$default-padding;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.2em;
+        border: solid 1px black;
+        max-width: 100%;
+        &--name{
+            width: 100%;
+            padding: var.$default-padding;
+        }
+    }
+
+    &__buttons{
+        display: flex;
+        gap: 0.5em;
+        padding: 0 0.2em;
+    }
+
+    &__content{
+        padding: var.$default-padding;
+    }
+
+    &__tags{
+        padding: 0.5rem;
+        span{
+            padding: 0.2em 0.6em;
+            background-color: rgb(194 50 74);
+            border-radius: 6px;
+            margin: 0 0.1em;
+            color: white;
+            font-weight: 700;
+        }
+    }
+
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        padding: var.$default-padding;
+        background: var.$content-background-2;
+    }
+
+}
