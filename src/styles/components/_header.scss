@@ -1,0 +1,24 @@
+@use "../var";
+
+
+.header{
+    max-width: var.$display-width;
+    height: 10rem;
+    margin: auto;
+    position: relative;
+    &__mascot-img{
+        z-index: 1;
+        position: absolute;
+        left: -2.6rem;
+        top: -0.85rem;
+        width: 20rem;
+    }
+    &__logo-img{
+        width: 20rem;
+        position: absolute;
+        z-index: 3;
+        top: 1.7rem;
+        left: 4rem;
+    }
+}
+
