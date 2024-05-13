@@ -2,13 +2,15 @@
 @use "../mixin";
 
 .button{
-    padding: 0.4em;
+    padding: 0.2rem;
     border: solid 1px #0169a4;
     border-radius: 3px;
     background: linear-gradient(0deg, rgb(0 104 163), rgb(118 199 255));
     transition: background-color 0.2s linear;
     color: white;
     box-shadow: 0px 1px 0 0px #00000059;
+    text-align: center;
+    text-decoration: none;
     &:hover{
         background: linear-gradient(0deg, rgb(0, 109, 172), rgb(128, 202, 255));
         transition: background-color 0.2s linear;
@@ -16,8 +18,8 @@
     &:active{
         background: linear-gradient(0deg, rgb(0, 78, 122), rgb(11, 118, 194));
         transition: background-color 0.2s linear;
-        padding-top: 0.5em;
-        padding-bottom: 0.3em;
+        padding-top: 0.3rem;
+        padding-bottom: 0.1rem;
         box-shadow: inset 0px 1px 0 0px #00000059;
     }
 }

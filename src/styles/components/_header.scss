@@ -12,6 +12,7 @@
         left: -2.6rem;
         top: -0.85rem;
         width: 20rem;
+        user-select: none;
     }
     &__logo-img{
         width: 20rem;
@@ -19,6 +20,7 @@
         z-index: 3;
         top: 1.7rem;
         left: 4rem;
+        user-select: none;
     }
 }
 

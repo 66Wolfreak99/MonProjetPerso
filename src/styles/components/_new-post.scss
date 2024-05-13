@@ -15,7 +15,7 @@
     }
 
     &__imagearea{
-        width: 10rem;
+        width: 15rem;
         background: #c4c4c4;
         height: 10rem;
         border: dashed 3px grey;
@@ -26,6 +26,8 @@
         img{
             width: 3rem;
             opacity: 0.4;
+            user-select: none;
+            -webkit-user-drag: none;
         }
     }
     &__textarea {

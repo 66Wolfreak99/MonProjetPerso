@@ -14,4 +14,79 @@
         color: var.$main-blue;
         font-weight: 700;
     }
+    &__container {
+        margin-bottom: 2rem;
+    }
+
+    &__soarer{
+        background: var.$content-background-2;
+        border: solid 1px var.$light-grey;
+        margin: 0.3rem 0;
+        gap: 0.2rem;
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 3rem 4.5rem auto;
+        grid-template-areas: 
+        "img profile profile"
+        "img follow ."
+        ;
+        padding: 0.3rem;
+        img{
+            max-width: 3rem;
+            grid-area: img;
+        }
+        p{
+            grid-area: profile;
+        }
+    }
+    &__follow{
+        grid-area: follow;
+        &:hover{
+            text-decoration: none !important;
+        }
+    }
+    &__user{
+        background: var.$content-background-2;
+        border-radius: 5px;
+        overflow: hidden;
+        border: solid 1px var.$light-grey;
+        &--profile{
+            height: 7rem;
+            position: relative;
+            img{
+                max-height: 4rem;
+                vertical-align: middle;
+                position: absolute;
+                left: 0.5rem;
+                bottom: 0;
+                box-shadow: 0 0 3px 1px #020202a1;
+            }
+            p{
+                display: inline;
+                vertical-align: middle;
+                position: absolute;
+                left: 5rem;
+                bottom: 1rem;
+            }
+        }
+        &--stats{
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            p{
+                display: inline-block;
+            }
+            span{
+                color: var.$main-blue;
+            }
+        }
+        &--banner{
+            width: 100%;
+            height: 4rem;
+            background-size: cover;
+            background-position: 0px -13px;
+            background-image: url(/img/banner.webp);
+        }
+    }
 }

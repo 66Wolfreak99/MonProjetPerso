@@ -20,6 +20,12 @@
         &--name{
             width: 100%;
             padding: 0.4em;
+            vertical-align: middle;
+            display: inline;
+        }
+        &--date {
+            display: inline;
+            font-size: 0.7em;
         }
     }
 
@@ -53,6 +59,34 @@
     &__content{
         padding: var.$default-padding;
         line-height: 1.2em;
+    }
+
+    &__image-container {
+        min-width: 10%;
+        flex: 1 1 10em;
+        max-height: 22em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 0.3em;
+    }
+
+    &__images {
+        margin: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        // grid-template-columns: repeat(auto-fit, minmax(min(100% / 1, max(64px, 100% / 3)), 1fr));
+        img{
+            // max-height: 22em;
+            // height: 100%;
+            max-width: none;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
     }
 
     &__tags{

@@ -10,6 +10,7 @@
 
 img{
     max-width: 100%;
+    vertical-align: middle;
 }
 
 body{
@@ -57,4 +58,9 @@ a{
 
 .bold{
     font-weight: 700;
+}
+
+.account-name{
+    font-weight: 700;
+    font-size: 1.1em;
 }
