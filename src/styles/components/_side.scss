@@ -1,6 +1,16 @@
 @use "../var";
 @use "../mixin";
 
+#user{
+    @include mixin.phone{
+        position: fixed;
+        top: 0.4rem;
+        z-index: 3;
+        right: 0.7rem;
+        margin-bottom: 0;
+    }
+}
+
 .side{
     padding: var.$default-padding;
     min-width: 15rem;
@@ -14,6 +24,15 @@
         color: var.$main-blue;
         font-weight: 700;
     }
+
+    &__current-container{
+        font-size: 1.7rem;
+    }
+
+    &__more{
+        font-size: 1.5rem;
+    }
+
     &__container {
         margin-bottom: 2rem;
     }
@@ -31,6 +50,14 @@
         "img follow ."
         ;
         padding: 0.3rem;
+        @include mixin.phone{
+            gap: 0;
+            grid-gap: 0.5rem;
+            grid-template-columns: auto 1fr 1fr 7rem;
+            grid-template-areas: "img profile profile follow ";
+            padding: 0.3rem;
+            align-items: center;
+        }
         img{
             max-width: 3rem;
             grid-area: img;
@@ -41,6 +68,10 @@
     }
     &__follow{
         grid-area: follow;
+        @include mixin.phone{
+            height: 86%;
+            line-height: 2rem;
+        }
         &:hover{
             text-decoration: none !important;
         }
@@ -50,6 +81,11 @@
         border-radius: 5px;
         overflow: hidden;
         border: solid 1px var.$light-grey;
+        @include mixin.phone{
+            background: none;
+            overflow: visible;
+            border: none;
+        }
         &--profile{
             height: 7rem;
             position: relative;
@@ -60,6 +96,11 @@
                 left: 0.5rem;
                 bottom: 0;
                 box-shadow: 0 0 3px 1px #020202a1;
+                @include mixin.phone{
+                    position: static;
+                    max-height: 
+                    2.5rem;
+                }
             }
             p{
                 display: inline;
@@ -67,6 +108,16 @@
                 position: absolute;
                 left: 5rem;
                 bottom: 1rem;
+                @include mixin.phone{
+                    position: static;
+                }
+            }
+            @include mixin.phone{
+                height: auto;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                gap: 0.6rem;
             }
         }
         &--stats{
@@ -74,6 +125,9 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            @include mixin.phone{
+                display: none;
+            }
             p{
                 display: inline-block;
             }
@@ -87,6 +141,9 @@
             background-size: cover;
             background-position: 0px -13px;
             background-image: url(/img/banner.webp);
+            @include mixin.phone{
+                display: none;
+            }
         }
     }
 }

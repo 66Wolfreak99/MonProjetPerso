@@ -2,7 +2,6 @@
 @use "../mixin";
 
 .new-post{
-    padding: var.$default-padding;
     border-bottom: solid 1px var.$light-grey;
     background: var.$content-background;
     label{
@@ -12,6 +11,10 @@
     &__form{
         display: flex;
         gap: var.$default-padding;
+        padding: 0 var.$default-padding;
+        @include mixin.phone{
+            flex-direction: column;
+        }
     }
 
     &__imagearea{
@@ -23,6 +26,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @include mixin.phone{
+            width: 100%;
+            height: 5rem;
+        }
         img{
             width: 3rem;
             opacity: 0.4;
@@ -37,11 +44,18 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        @include mixin.phone{
+            height: 14rem;
+        }
         textarea{
             width: 95%;
             height: 6rem;
             margin: auto;
             resize: none;
+            @include mixin.phone{
+                height: 10rem;
+                font-size: 1.6rem;
+            }
         }
         &--footer{
             padding: 0.5rem;

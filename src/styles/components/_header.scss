@@ -1,11 +1,23 @@
 @use "../var";
-
+@use "../mixin";
 
 .header{
     max-width: var.$display-width;
     height: 10rem;
     margin: auto;
     position: relative;
+    @include mixin.phone{
+        background-image: url(../img/Background.png);
+        background-repeat: no-repeat;
+        background-position-y: -2.5rem;
+        background-size: 100%;
+        border-bottom: 1px solid black;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        z-index: 2;
+        height: 3.4rem;
+    }
     &__mascot-img{
         z-index: 1;
         position: absolute;
@@ -13,6 +25,15 @@
         top: -0.85rem;
         width: 20rem;
         user-select: none;
+        @include mixin.tablet{
+            left: 0;
+            z-index: 0;
+        }
+        @include mixin.phone{
+            left: -0.4rem;
+            top: -1.85rem;
+            width: 11rem;
+        }
     }
     &__logo-img{
         width: 20rem;
@@ -21,6 +42,16 @@
         top: 1.7rem;
         left: 4rem;
         user-select: none;
+        @include mixin.tablet{
+            top: 2rem;
+            left: 6rem;
+        }
+       
+        @include mixin.phone{
+            width: 11rem;
+            top: 0.5rem;
+            left: 2.3rem;
+        }
     }
 }
 

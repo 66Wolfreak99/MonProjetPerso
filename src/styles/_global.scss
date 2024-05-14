@@ -24,6 +24,10 @@ body{
     background-repeat: no-repeat;
     background-position: top;
     background-size: 100% auto;
+    @include mixin.phone{
+        background-image: none;
+        padding-bottom: var.$mobile-nav-height;
+    }
 
 }
 
@@ -41,7 +45,13 @@ a{
     margin: auto;
     position: relative;
     display: flex;
-    @include mixin.main-appearance(var.$content-background)
+    @include mixin.main-appearance(var.$content-background);
+    @include mixin.phone{
+        flex-direction: column;
+        max-width: none;
+        width: 100%;
+        border: none;
+    }
 }
 
 
@@ -58,6 +68,10 @@ a{
     background:  var.$content-background;
     margin-top: 2rem;
     text-align: center;
+    @include mixin.phone{
+        margin: 0;
+    }
+
 }
 
 .bold{

@@ -18,6 +18,14 @@
         /* writing-mode: vertical-lr; */
         opacity: 0.1;
         transform: rotate(270deg);
+        @include mixin.tablet{
+            transform: none;
+            position: static;
+        }
+        @include mixin.phone{
+            transform: none;
+            position: static;
+        }
     }
 
     &__see-more {
@@ -38,21 +46,27 @@
             margin: auto;
             text-align: left;
             overflow: hidden;
-            &:hover{
-                text-decoration: none;
-                span{
-                    left: 3em;
-                    transform: scale(1.5);
-                    transition: all 0.2s ease-out;
-                }
-                img{
-                    transition: all 0.4s ease-out;
-                    max-width: 8em;
-                    right: -0.7em;
-                    top: -3.6em;
-                    opacity: 1;
+            @include mixin.phone{
+                height: 4rem;
+            }
+            @include mixin.main{
+                &:hover{
+                    text-decoration: none;
+                    span{
+                        left: 3em;
+                        transform: scale(1.5);
+                        transition: all 0.2s ease-out;
+                    }
+                    img{
+                        transition: all 0.4s ease-out;
+                        max-width: 8em;
+                        right: -0.7em;
+                        top: -3.6em;
+                        opacity: 1;
+                    }
                 }
             }
+            
             span{
                 position: relative;
                 z-index: 1;
@@ -68,6 +82,11 @@
                 right: 7em;
                 top: -0.6em;
                 opacity: 0;
+                @include mixin.phone{
+                    opacity: 1;
+                    top: -6rem;
+                    right: 0;
+                }
             }
         }
     }

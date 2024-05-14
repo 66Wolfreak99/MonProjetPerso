@@ -11,4 +11,19 @@
     font-size: 2rem;
     font-weight: 800;
     color: var.$main-blue;
+    @include phone{
+        margin: 0.5rem;
+        font-size: 1.6rem;
+    }
+}
+
+@mixin phone {
+    @media (max-width: 650px) { @content; }
+}
+@mixin tablet {
+    @media (min-width: 650px) and (max-width: 830px) { @content; }
+}
+
+@mixin main {
+    @media (min-width: 650px) { @content; }
 }
