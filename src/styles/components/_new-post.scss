@@ -50,12 +50,16 @@
         textarea{
             width: 95%;
             height: 6rem;
-            margin: auto;
+            margin: 0.3rem auto;
             resize: none;
             @include mixin.phone{
                 height: 10rem;
                 font-size: 1.6rem;
             }
+        }
+        input{
+            width: 95%;
+            margin: 0.3rem auto;
         }
         &--footer{
             padding: 0.5rem;

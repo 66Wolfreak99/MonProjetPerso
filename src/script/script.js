@@ -28,6 +28,8 @@ class Post{
     }
 }
 
+
+
 const currentUser = postsList.currentUser
 
 const users = postsList.users;
@@ -158,14 +160,10 @@ function displayNotif(dmNum, notifNum){
     }
 }
 
-function displayPost(){
 
+function displayOnePost(elem){
+    console.log(elem.username);
     const postCont = document.getElementById("post-container");
-    
-    for (const post of posts){
-        
-
-        console.log(post.username);
 
         const postEl = elementCreateAndAssign("article", "post");
 
@@ -176,9 +174,9 @@ function displayPost(){
 
         // Profile img & nom
 
-        const profileImage = elementCreateAndAssign("img", "profile-pic", "src", post.imgUrl);
-        const profileUsername = elementCreateAndAssign("p", ["post__profile--name", "account-name"],"","", post.username);
-        const profileDate = elementCreateAndAssign("p", "post__profile--date", "", "",post.date)
+        const profileImage = elementCreateAndAssign("img", "profile-pic", "src", elem.imgUrl);
+        const profileUsername = elementCreateAndAssign("p", ["post__profile--name", "account-name"],"","", elem.username);
+        const profileDate = elementCreateAndAssign("p", "post__profile--date", "", "",elem.date)
 
         postProfileInfo.append(
             profileImage, profileUsername, profileDate,
@@ -223,30 +221,32 @@ function displayPost(){
         }
 
         // Content
-        const postContent = elementCreateAndAssign("p", "post__content", "","",post.content);
+        const postContent = elementCreateAndAssign("p", "post__content", "","",elem.content);
 
         // Images
-        const postImage = elementCreateAndAssign("section", "post__images");
-        if(post.images){
+        let postImage;
+        if(elem.images){
             
-            
-            for (const image of post.images){
+            postImage = elementCreateAndAssign("section", "post__images");
+            for (const image of elem.images){
                 const imgCont = elementCreateAndAssign("div", "post__image-container");
                 const imgEl = elementCreateAndAssign("img","post__image",["src", "alt"],[image, image]);
 
                 imgCont.append(imgEl);
                 postImage.append(imgCont)
             };
+        } 
 
-            
+        const postContImg = elementCreateAndAssign("div");
 
-        }
+        postContImg.append(postContent);
+        if (postImage){postContImg.append(postImage)};
 
         // Tags
         const tagAside = document.createElement("aside");
         const tagCont = elementCreateAndAssign("p", "post__tags");
 
-        for (const tag of post.tags){
+        for (const tag of elem.tags){
             const tagEl = elementCreateAndAssign("span", "", "","",tag);
             tagCont.append(tagEl)
         };
@@ -264,24 +264,29 @@ function displayPost(){
 
         for(let i = 0; i< 3; i++){
 
-            let title ;
+            let title;
             let number; 
 
             switch(i){
                 case 0:
                     title = "Views: ";
-                    number = post.views;
+                    number = elem.views;
                     break;
                 case 1:
                     title = "Responses: ";
-                    number = post.responses;
+                    number = elem.responses;
                     break;
                 case 2:
                     title = "Likes: ";
-                    number = post.likes;
+                    number = elem.likes;
                     break;
                 
             }
+            if (!number){
+                number = "0"
+            }
+
+            console.log( number)
 
             const stats  = elementCreateAndAssign("span", "", "","",title);
             stats.append(elementCreateAndAssign("span", "bold", "","",number));
@@ -294,10 +299,17 @@ function displayPost(){
 
         postFooter.append(footerStats, footerReport)
 
-        postEl.append( postProfile, postContent, postImage, tagAside, postFooter );
+        postEl.append( postProfile, postContImg, tagAside, postFooter );
         // console.log(postCont)
         postCont.prepend(postEl);
 
+}
+
+function displayPosts(){
+    
+    for (const post of posts){   
+
+        displayOnePost(post)
        
     }
 
@@ -307,5 +319,39 @@ function displayPost(){
 displaySuggestions();
 displayCurrentUser();
 displayCurrents();
-displayPost();
-displayNotif(currentUser.notifications[0], currentUser.notifications[1])
+displayPosts();
+displayNotif(currentUser.notifications[0], currentUser.notifications[1]);
+
+const postForm = document.querySelector(".new-post");
+
+postForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let input = document.getElementById("newpost").value;
+    input = input.trim();
+
+    let inputTags = document.getElementById("newtags").value;
+    let tags = inputTags.split(' ')
+
+    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    const date = new Date();
+
+
+    if (input){
+        const newPost = new Post(
+            input,
+            "",
+            currentUser.username,
+            currentUser.imgUrl,
+            tags,
+            0,
+            0,
+            0,
+            `${date.getHours()}:${date.getMinutes()} ${month[date.getMonth()]} ${date.getDate()} ${date.getFullYear()}`
+        );
+
+        displayOnePost(newPost);
+        postForm.reset();
+        
+    }
+
+})
